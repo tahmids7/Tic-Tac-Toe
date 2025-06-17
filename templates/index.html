@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Tic-Tac-Toe!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+        <div id="scoreboard" class="scoreboard">
+            <h2>Scoreboard</h2>
+            <p>Player X: <span id="score-x">{{ scores['X'] }}</span></p>
+            <p>Player O: <span id="score-o">{{ scores['O'] }}</span></p>
+            <p>Draws: <span id="score-draws">{{ scores['Draws'] }}</span></p>
+        </div>
+        <select id="game-mode" class="game-mode">
+            <option value="two-player">Two Players</option>
+            <option value="ai">Single Player vs AI</option>
+        </select>
+        <select id="theme-selector" class="theme-selector">
+            <option value="default">Default Theme</option>
+            <option value="dark">Dark Theme</option>
+            <option value="colorful">Colorful Theme</option>
+        </select>
+        <div id="game-board" class="game-board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <div id="status" class="status"></div>
+        <button id="restart-btn" class="restart-btn">Restart Game</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
